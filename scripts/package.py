@@ -26,8 +26,10 @@ archive = output / f'JerzyMuffCollection-{args.platform}-{version}.zip'
 binary = bundle/'Contents'/('x86_64-win' if args.platform=='Win64' else 'x86_64-linux')/(bundle.stem+('.vst3' if args.platform=='Win64' else '.so'))
 if not binary.is_file() or binary.read_bytes()[:2 if args.platform=='Win64' else 4] != (b'MZ' if args.platform=='Win64' else b'\x7fELF'):
     raise SystemExit('Missing binary or wrong platform in VST3 bundle')
-manifest = json.loads((bundle/'Contents/Resources/moduleinfo.json').read_text())
-if manifest.get('Version') != version:
+# JUCE 7's SDK writer emits trailing commas. Preserve its manifest verbatim.
+manifest = (bundle/'Contents/Resources/moduleinfo.json').read_text()
+manifest_version = re.search(r'^\s*"Version":\s*"([^"]+)"', manifest, re.MULTILINE)
+if not manifest_version or manifest_version.group(1) != version:
     raise SystemExit('VST3 manifest does not match project version')
 commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD'], text=True).strip()
 metadata = dict(version=version, source_commit=commit, platform=args.platform, status='experimental nominal circuit model; hardware calibration unverified')
