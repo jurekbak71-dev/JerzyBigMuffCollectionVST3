@@ -22,6 +22,12 @@ ctest --test-dir build -C Release --output-on-failure
 VST3 bundle: `build/JerzyMuff_artefacts/Release/VST3/Jerzy Muff Collection.vst3`.
 GitHub Actions builds and tests Windows/Linux on each main push and uploads platform-specific VST3 artifacts. CI status must be checked; creating a workflow alone does not establish success.
 
+## Download Windows VST3 (experimental 0.1.0)
+
+[Download the Win64 ZIP](https://github.com/jurekbak71-dev/JerzyBigMuffCollectionVST3/raw/refs/heads/main/downloads/JerzyMuffCollection-Win64-0.1.0.zip) · [SHA-256](downloads/JerzyMuffCollection-Win64-0.1.0.zip.sha256)
+
+Built from source commit `16e667d`. Includes the complete VST3 folder, project and JUCE sources, and licence notices. Audio tests passed under Wine; full Windows GUI validation timed out under Wine, and native FL Studio compatibility is not confirmed. See [validation details](docs/VALIDATION.md).
+
 ## Windows installation
 
 Close your DAW. Extract the entire **Windows** `.vst3` folder into `C:\Program Files\Common Files\VST3`, rescan effects in FL Studio, and load Jerzy Muff Collection on a mixer track. Start at low listening volume. Linux builds cannot be installed as Windows plugins.
