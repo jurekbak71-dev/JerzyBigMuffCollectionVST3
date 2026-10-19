@@ -4,6 +4,9 @@ import argparse
 import hashlib
 import pathlib
 import zipfile
+import re
+import json
+import subprocess
 
 parser = argparse.ArgumentParser()
 parser.add_argument('bundle', type=pathlib.Path)
@@ -18,17 +21,27 @@ if not bundle.is_dir():
     raise SystemExit(f'Bundle is missing: {bundle}')
 output = root / 'dist'
 output.mkdir(exist_ok=True)
-archive = output / f'JerzyMuffCollection-{args.platform}-0.1.0.zip'
+version = re.search(r'project\(JerzyMuffCollection VERSION ([0-9.]+)', (root/'CMakeLists.txt').read_text()).group(1)
+archive = output / f'JerzyMuffCollection-{args.platform}-{version}.zip'
+binary = bundle/'Contents'/('x86_64-win' if args.platform=='Win64' else 'x86_64-linux')/(bundle.stem+('.vst3' if args.platform=='Win64' else '.so'))
+if not binary.is_file() or binary.read_bytes()[:2 if args.platform=='Win64' else 4] != (b'MZ' if args.platform=='Win64' else b'\x7fELF'):
+    raise SystemExit('Missing binary or wrong platform in VST3 bundle')
+manifest = json.loads((bundle/'Contents/Resources/moduleinfo.json').read_text())
+if manifest.get('Version') != version:
+    raise SystemExit('VST3 manifest does not match project version')
+commit = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD'], text=True).strip()
+metadata = dict(version=version, source_commit=commit, platform=args.platform, status='experimental nominal circuit model; hardware calibration unverified')
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as z:
+    z.writestr('BUILD-INFO.json', json.dumps(metadata, indent=2)+'\n')
     for p in sorted(bundle.rglob('*')):
         if p.is_file():
             z.write(p, pathlib.Path(bundle.name) / p.relative_to(bundle))
     for name in ['README.md', 'LICENSE', 'docs/JUCE-LICENSE.md']:
         z.write(root / name, name)
     # Include the complete project sources and build recipe, not only binaries.
-    for name in ['Source', 'tests', 'cmake', 'scripts', '.github', 'docs']:
+    for name in ['Source', 'tests', 'cmake', 'scripts', '.github', 'docs', 'circuits', 'tools']:
         for p in sorted((root / name).rglob('*')):
-            if p.is_file():
+            if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc':
                 z.write(p, pathlib.Path('source') / p.relative_to(root))
     for name in ['CMakeLists.txt', 'README.md', 'LICENSE', '.gitignore']:
         z.write(root / name, pathlib.Path('source') / name)

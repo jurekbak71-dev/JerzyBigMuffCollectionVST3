@@ -1,17 +1,25 @@
-# Validation status
+# Validation status — 0.2.0
 
-This is an experimental 0.1.0 development build, not a hardware-verified recreation.
+Experimental schematic-based circuit release. This is not a hardware-calibrated replica.
 
-Verified locally on 2026-10-18:
+Verified in the cloud environment on 2026-10-19:
 
-- Linux Release VST3: built; pluginval 1.0.4 strictness 5 passed, including GUI and automation.
-- Linux CTest: 2/2 passed (DSP regression and processor state).
-- Windows x64 cross build: built using JUCE 7.0.12 and MinGW. The resulting PE DLL imports Windows system libraries only.
-- Windows CTest under Wine 10: 2/2 passed.
-- Windows pluginval strictness 5 with `--skip-gui-tests`: passed. This does not validate VST3 editor embedding.
-- Windows editor: constructed and rendered off-screen by processor_tests under Wine; this does not validate DAW embedding.
-- Full Windows pluginval: timed out in Editor after 30 seconds under Wine. Cause remains unresolved. Native MSVC CI and FL Studio compatibility have not been confirmed.
+| Check | Outcome |
+|---|---|
+| Linux Release VST3 | Built; full pluginval 1.0.4 strictness 5 passed, including editor/automation |
+| Linux CTest | 3/3 passed: legacy DSP, processor/state/migration, circuit numerics |
+| Windows x64 VST3 | Cross-compiled with MinGW and JUCE 7.0.12 |
+| Windows CTest under Wine 10 | 3/3 passed |
+| Circuit solver vs ngspice 44.2 | 41/41 transient cases passed; worst waveform NRMSE approximately 2.112% |
+| Circuit numerical suite | 42 model/internal-rate cases; no convergence failures in tested DC/silence/automation/audio cases |
+| Windows pluginval audio-only under Wine | Passed strictness 5 with GUI tests explicitly skipped |
+| Windows editor off-screen render | Passed; this does not establish VST3 editor embedding in native Windows |
+| Full Windows pluginval GUI | Timed out at Editor after 60 seconds under Wine; cause unresolved |
+| Native Windows CI / FL Studio | Unconfirmed; GitHub API access previously returned Forbidden |
+| Physical pedal A/B and transistor/pot characterization | Not performed |
 
-The CTest suites cover 44.1/48/96 kHz, six voicings, finite output, DC decay, channel isolation, reset, state roundtrip, invalid state, concurrent restore/processing, automation, bypass, mono/stereo layouts, oversized blocks and NaN input. They do not establish analog accuracy, perceived sound quality, or compatibility with every host.
+Windows audio-only validation and off-screen rendering do not turn the failed Editor check into a pass. The native Windows workflow retains full GUI validation.
 
-GitHub Actions builds native Windows/Linux and includes full pluginval GUI validation; its result must be checked separately. The cloud setup script currently reports failure at the unresolved Windows editor check, rather than hiding it.
+The SPICE test uses the same exported component graph and documented nominal transistor/diode assumptions. It independently validates the numerical solve, not transcription accuracy or similarity to a real pedal. The metrics use the complete waveform, including onset, with no time/gain/DC fitting. See [ANALOG_MODEL.md](ANALOG_MODEL.md), the [case metrics](validation/spice-summary-0.2.0.json) and reproducible tools.
+
+Processor tests cover old 0.1.0 state migration, invalid state handling, legacy automation range, every new circuit through the oversampler/mixer, finite output, mono/stereo, large blocks and NaN input. The boost topology is tested to be independent of Sustain. Not all possible signals, hosts or component tolerances have been validated.

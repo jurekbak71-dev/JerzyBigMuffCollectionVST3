@@ -1,43 +1,49 @@
-# Jerzy Muff Collection
+# Jerzy Muff Collection 0.2.0
 
-Experimental JUCE 7 VST3 fuzz for mono/stereo guitar tracks. Six selectable voicings: Triangle, Ram's Head, Op-Amp, Civil War, Green Russian, NYC. Volume, Tone, Sustain and automatable bypass; 4x oversampling, parameter/model crossfades and DAW project-state recall.
+VST3 fuzz collection with **13 schematic-based circuit revisions, 14 circuit modes and six legacy voicings**. New instances load Colorsound Supa ToneBender. The circuit engine solves connected transistor/diode networks, coupling capacitors, feedback, physical pot segments and the loaded tone stack.
 
-The editor follows a full-size vintage stompbox layout with three large knobs, metal enclosure, LED and footswitch. No Pico layout or copied logos/assets. Model selection changes the panel colours.
+**Accuracy status:** component values follow the supplied Kit Rae / BigMuffPage schematics, with explicit ambiguity notes. Device characteristics are nominal and uncalibrated. The numerical model passed 41 independent ngspice comparisons, but has not been matched against physical pedals. [Model assumptions and validation report](docs/ANALOG_MODEL.md).
 
-**Sound status:** these are distinct phenomenological voicings using cascaded saturation and a scooped tone network. They are not verified circuit/component models or measured replicas of EHX revisions. In particular the Op-Amp voicing is not an actual op-amp circuit simulation. Hardware comparison and listening tests in FL Studio remain outstanding. Product/model names describe inspiration, with no EHX affiliation.
+## Download Windows VST3
 
-![Full-size NYC panel](docs/gui-nyc.png)
+[Download experimental 0.2.0 Win64 ZIP](https://github.com/jurekbak71-dev/JerzyBigMuffCollectionVST3/raw/refs/heads/main/downloads/JerzyMuffCollection-Win64-0.2.0.zip) · [SHA-256](downloads/JerzyMuffCollection-Win64-0.2.0.zip.sha256)
 
-## Build
+The ZIP contains the entire `.vst3` bundle, complete project/JUCE sources, build metadata and licence notices. Close the DAW, extract `Jerzy Muff Collection.vst3` into `C:\Program Files\Common Files\VST3`, then rescan effects. Native FL Studio compatibility remains unconfirmed. Full Windows pluginval GUI validation times out under Wine; Windows audio validation and CTest are reported separately in [VALIDATION.md](docs/VALIDATION.md).
 
-CMake 3.22+, C++17 compiler, Git and JUCE 7.0.12 (pinned commit; automatically fetched). Windows: Visual Studio 2022 C++ desktop workload. Linux dependencies:
+## Models and controls
+
+V1 66#5; Triangle 66#8, 66#6, 66#11; Jordan Creator 6000; V1 67#1; Ace Tone FM-3 Distortion/Boost; Triangle 72#1 and 72#2 PNP; Elk/Electro Sound Sustainar; Sekova Model 2015; Ram's Head 73#18; Colorsound Supa ToneBender. The six 0.1.0 approximations remain explicitly labelled Legacy. Existing states without a circuit parameter select the legacy engine, and the original six-choice automation parameter is retained. Oversampling behavior at high host rates has changed, so bit-identical old renders are not promised.
+
+Volume, Tone, Sustain, model selection and bypass are automatable. Physical log/linear pot tapers follow each catalogue entry, subject to documented source ambiguities. Boost bypasses the Sustain network. Audio calibration is 1 full-scale sample = 1V peak with a 1k source and 1M load; use DAW pre-gain to match a known DI/hardware level. Circuit output can exceed 0dBFS; use Volume accordingly. There is no amp/cab simulation, preset browser or MIDI control.
+
+GUI: full-size stompbox layout, three knobs, LED and footswitch. Model changes alter the panel; the Supa model uses an orange/purple panel. No original logo artwork is included. Model names identify the reference circuits without manufacturer affiliation.
+
+![Supa ToneBender panel](docs/gui-supa-0.2.0.png)
+
+## Build and tests
+
+CMake 3.22+, C++17 compiler, Git, JUCE 7.0.12 (pinned commit, fetched automatically). Windows: Visual Studio 2022 C++ desktop workload. Linux:
 
 ```sh
-sudo apt-get install libasound2-dev libx11-dev libxext-dev libxinerama-dev libxrandr-dev libxcursor-dev libfreetype-dev libfontconfig1-dev libxrender-dev libgl1-mesa-dev
+sudo apt-get install libasound2-dev libx11-dev libxext-dev libxinerama-dev libxrandr-dev libxcursor-dev libfreetype-dev libfontconfig1-dev libxrender-dev libgl1-mesa-dev xvfb ngspice
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release --parallel 2
 ctest --test-dir build -C Release --output-on-failure
 ```
 
-VST3 bundle: `build/JerzyMuff_artefacts/Release/VST3/Jerzy Muff Collection.vst3`.
-GitHub Actions builds and tests Windows/Linux on each main push and uploads platform-specific VST3 artifacts. CI status must be checked; creating a workflow alone does not establish success.
+Bundle: `build/JerzyMuff_artefacts/Release/VST3/Jerzy Muff Collection.vst3`.
+The three CTest suites cover legacy DSP, processor/state/old-state migration and circuit numerics. To regenerate/check the component header: `python tools/generate_catalog.py` / `--check`.
 
-## Download Windows VST3 (experimental 0.1.0)
+Independent reference validation requires Python with NumPy and ngspice:
 
-[Download the Win64 ZIP](https://github.com/jurekbak71-dev/JerzyBigMuffCollectionVST3/raw/refs/heads/main/downloads/JerzyMuffCollection-Win64-0.1.0.zip) · [SHA-256](downloads/JerzyMuffCollection-Win64-0.1.0.zip.sha256)
+```sh
+python tools/validate_spice.py --probe build/circuit_probe --ngspice /usr/bin/ngspice --output build/spice-validation
+```
 
-Built from source commit `16e667d`. Includes the complete VST3 folder, project and JUCE sources, and licence notices. Audio tests passed under Wine; full Windows GUI validation timed out under Wine, and native FL Studio compatibility is not confirmed. See [validation details](docs/VALIDATION.md).
+`tools/plot_validation.py` additionally needs Matplotlib. The processor test executable accepts `--benchmark`, or a PNG destination to render the default Supa editor. GitHub Actions builds native Windows/Linux, runs tests and full pluginval GUI validation, and packages artifacts. CI result must be checked separately; writing a workflow does not establish success.
 
-## Windows installation
+## Cloud development and licence
 
-Close your DAW. Extract the entire **Windows** `.vst3` folder into `C:\Program Files\Common Files\VST3`, rescan effects in FL Studio, and load Jerzy Muff Collection on a mixer track. Start at low listening volume. Linux builds cannot be installed as Windows plugins.
+`scripts/cloud-setup.sh` installs a rootless Debian/MinGW development toolchain under `/workspace` and runs validation. Its full Windows GUI check currently exposes the unresolved Wine timeout. The saved cloud install configuration uses explicitly labelled Windows audio-only validation; it does not claim the GUI check passed. Live Xvfb/Wine processes must restart after restoring a snapshot.
 
-## Development checks
-
-`dsp_regression` covers 18 sample-rate/model combinations, finite bounded output, channel isolation, DC decay, reset and distinct voicings. `processor_state` covers state roundtrip and invalid state, oversampled processing, automation, bypass and channel isolation at three sample rates. Neither establishes hardware authenticity.
-
-JUCE uses GPLv3 or its commercial licence. This project is distributed under GPL-3.0-only; see LICENSE. Bundles must be distributed with licence notices and corresponding source.
-
-## Codex cloud
-
-`scripts/cloud-setup.sh` prepares a rootless Debian development toolchain under `/workspace`, builds Linux and cross-compiles Win64 with MinGW, runs both CTest suites (Windows under Wine), and runs pluginval 1.0.4 at strictness 5. Linux GUI validation passed; full Windows pluginval currently times out in the Editor test under Wine. Windows audio-only validation and off-screen editor rendering passed. This timeout is unresolved; see docs/VALIDATION.md. Cross compilation uses JUCE 7.0.12 because JUCE 8 rejects MinGW. The Windows CI workflow additionally targets native MSVC; a local Wine result does not establish a native Windows/FL Studio result.
+This project is GPL-3.0-only. JUCE is used under GPLv3; distribute the notices and corresponding source with binaries. See LICENSE and docs/JUCE-LICENSE.md.

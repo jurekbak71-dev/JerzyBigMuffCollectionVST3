@@ -14,7 +14,7 @@ deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg] https://deb.debia
 SOURCES
 apt_options=(-o Dir::Etc::sourcelist=/workspace/apt/sources.list -o Dir::Etc::sourceparts=- -o Dir::State::lists=/workspace/apt/lists -o Dir::Cache=/workspace/apt/cache -o APT::Sandbox::User=agent -o Debug::NoLocking=1)
 apt-get "${apt_options[@]}" update
-apt-get "${apt_options[@]}" --download-only --no-install-recommends -y install libasound2-dev libx11-dev libxext-dev libxinerama-dev libxrandr-dev libxcursor-dev libfreetype-dev libfontconfig1-dev libxrender-dev libgl1-mesa-dev g++-mingw-w64-x86-64-posix wine64 xvfb
+apt-get "${apt_options[@]}" --download-only --no-install-recommends -y install libasound2-dev libx11-dev libxext-dev libxinerama-dev libxrandr-dev libxcursor-dev libfreetype-dev libfontconfig1-dev libxrender-dev libgl1-mesa-dev g++-mingw-w64-x86-64-posix wine64 xvfb ngspice
 for archive in /workspace/apt/cache/archives/*.deb; do dpkg-deb -x "$archive" "$sysroot"; done
 python - <<'PY'
 from pathlib import Path

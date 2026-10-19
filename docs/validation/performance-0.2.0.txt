@@ -1,0 +1,2 @@
+Supa VST processor dual-mono seconds=0.157799 realtime_ratio=0.31476 peak=0.102729 failures=0
+Supa VST processor independent stereo seconds=0.332832 realtime_ratio=0.663894 peak=0.102729 failures=0

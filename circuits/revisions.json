@@ -1,0 +1,1184 @@
+{
+  "schema": 1,
+  "supplyVolts": 9,
+  "inputSourceOhms": 1000,
+  "outputLoadOhms": 1000000,
+  "voltsPerFullScale": 1,
+  "temperatureC": 27,
+  "transistorModel": {
+    "Is": 1e-14,
+    "BetaReverse": 4,
+    "Cbe": 8e-12,
+    "Cbc": 4e-12,
+    "Vaf": 100
+  },
+  "diodeModels": {
+    "1N914": {
+      "Is": 2.52e-09,
+      "N": 1.752,
+      "C": 4e-12
+    },
+    "1N4148": {
+      "Is": 2.52e-09,
+      "N": 1.752,
+      "C": 4e-12
+    },
+    "1N4001": {
+      "Is": 5e-09,
+      "N": 2,
+      "C": 1.5e-11
+    }
+  },
+  "source": "User-supplied Kit Rae / BigMuffPage.com traced schematics; textual component transcription, no diagram artwork redistributed.",
+  "assumptions": [
+    "Nominal simplified Ebers-Moll devices; original transistor parameters unmeasured.",
+    "Zero diode series resistance; no transistor high-current beta rolloff, diffusion charge or voltage-dependent junction capacitance. Nominal forward Early voltage is 100V.",
+    "Finite pot end resistance 1 ohm; audio taper x^log2(10), giving 10% at half rotation.",
+    "Ideal fixed supply; no supply sag, noise, component tolerances or pickup/cable emulation."
+  ],
+  "models": [
+    {
+      "rin": 36000,
+      "rc": [
+        39000,
+        10000,
+        39000,
+        10000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        470000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        120,
+        120,
+        120,
+        2200
+      ],
+      "sustainFoot": 1000,
+      "rclip": [
+        10000,
+        10000
+      ],
+      "cIn": 1e-06,
+      "cCouple1": 6.8e-07,
+      "cCouple2": 6.8e-07,
+      "cCouple3": 1e-06,
+      "cOutput": 6.8e-07,
+      "cFeedback": [
+        5e-10,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        1e-06,
+        1e-06
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        27000,
+        27000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "2N5133",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "id": "v1_66_5",
+      "name": "V1 66#5",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 6.8e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        33000,
+        10000,
+        33000,
+        10000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        470000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        120,
+        120,
+        120,
+        2700
+      ],
+      "sustainFoot": 1000,
+      "rclip": [
+        10000,
+        10000
+      ],
+      "cIn": 3e-06,
+      "cCouple1": 3e-06,
+      "cCouple2": 3e-06,
+      "cCouple3": 3e-06,
+      "cOutput": 3e-06,
+      "cFeedback": [
+        5e-10,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        3e-06,
+        3e-06
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        27000,
+        27000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "FS36999",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "id": "triangle_66_8",
+      "name": "Triangle 66#8",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 3e-06
+    },
+    {
+      "rin": 27000,
+      "rc": [
+        33000,
+        12000,
+        33000,
+        12000
+      ],
+      "rf": [
+        390000,
+        390000,
+        390000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        150,
+        150,
+        150,
+        2700
+      ],
+      "sustainFoot": 1500,
+      "rclip": [
+        12000,
+        12000
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-06,
+      "cCouple2": 1e-06,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-06,
+      "cFeedback": [
+        5e-10,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        1e-06,
+        1e-06
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        22000,
+        22000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "FS36999",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "id": "triangle_66_6",
+      "name": "Triangle 66#6",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 1e-06
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        15000,
+        10000,
+        15000,
+        10000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        100,
+        100,
+        150,
+        2700
+      ],
+      "sustainFoot": 1000,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1.2e-07,
+      "cCouple1": 1e-06,
+      "cCouple2": 1.2e-07,
+      "cCouple3": 1.2e-07,
+      "cOutput": 1e-06,
+      "cFeedback": [
+        0,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        1.2e-07,
+        1e-06
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        22000,
+        22000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": true,
+      "transistor": "2N5133",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        704,
+        655,
+        632,
+        702
+      ],
+      "notes": "C10 intentionally absent. Listed specimen hFE used as nominal beta, not a calibrated transistor model.",
+      "id": "triangle_66_11",
+      "name": "Triangle 66#11",
+      "sustainLog": true,
+      "toneLog": true,
+      "volumeLog": true,
+      "cToneOutput": 1e-06
+    },
+    {
+      "rin": 47000,
+      "rc": [
+        33000,
+        10000,
+        33000,
+        1000
+      ],
+      "rf": [
+        270000,
+        220000,
+        270000,
+        270000
+      ],
+      "rb": [
+        68000,
+        68000,
+        68000,
+        68000
+      ],
+      "re": [
+        150,
+        150,
+        150,
+        2700
+      ],
+      "sustainFoot": 1500,
+      "rclip": [
+        10000,
+        10000
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        0,
+        5.6e-10,
+        5.6e-10
+      ],
+      "cClip": [
+        1e-07,
+        1e-07
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        22000,
+        22000
+      ],
+      "toneC": [
+        2.7e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": true,
+      "transistor": "MSPS3353",
+      "diode": "1N4001",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "Baseline drawing, not annotated optional 12k/500p variants.",
+      "id": "jordan_6000",
+      "name": "Jordan Creator 6000",
+      "sustainLog": true,
+      "toneLog": true,
+      "volumeLog": true,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        15000,
+        10000,
+        15000,
+        12000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        100,
+        100,
+        100,
+        2700
+      ],
+      "sustainFoot": 820,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        5e-10,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        1e-07,
+        1e-07
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "FS36999",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "R13=15k and R11=15k selected; documented alternatives not silently averaged.",
+      "id": "v1_67_1",
+      "name": "V1 67#1",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 8200,
+      "rc": [
+        150000,
+        10000,
+        15000,
+        10000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        100,
+        100,
+        100,
+        2700
+      ],
+      "sustainFoot": 820,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        2.5e-10,
+        2.5e-10,
+        2.5e-10
+      ],
+      "cClip": [
+        1e-07,
+        1e-07
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4.7e-09,
+        1e-08
+      ],
+      "toneInputCap": 1e-06,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "2SC1000",
+      "diode": "1N4148",
+      "inputBypassCap": 3.3e-09,
+      "postInputLoad": 100000,
+      "volumeBeforeOutput": true,
+      "outputShunt": 100000,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "C15=3300pF from lower drawing. Tone logarithmic assumed; source taper annotation conflicts. Sustain/Volume linear.",
+      "toneLog": true,
+      "volumeLog": false,
+      "sustainLog": false,
+      "id": "ace_fm3_dist",
+      "name": "Ace Tone FM-3 Distortion",
+      "cToneOutput": 1e-06
+    },
+    {
+      "rin": 8200,
+      "rc": [
+        150000,
+        10000,
+        15000,
+        10000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        100,
+        100,
+        100,
+        2700
+      ],
+      "sustainFoot": 820,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        2.5e-10,
+        2.5e-10,
+        2.5e-10
+      ],
+      "cClip": [
+        1e-07,
+        1e-07
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4.7e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "2SC1000",
+      "diode": "1N4148",
+      "inputBypassCap": 3.3e-09,
+      "postInputLoad": 100000,
+      "volumeBeforeOutput": true,
+      "outputShunt": 100000,
+      "boost": true,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "Shared input/output stages; clipping stages bypassed. Boost Tone logarithmic, Boost Volume linear. Sustain has no effect.",
+      "toneLog": true,
+      "volumeLog": false,
+      "sustainLog": false,
+      "id": "ace_fm3_boost",
+      "name": "Ace Tone FM-3 Boost",
+      "cToneOutput": 1e-06
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        15000,
+        12000,
+        12000,
+        12000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        470000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        150,
+        150,
+        150,
+        2700
+      ],
+      "sustainFoot": 1000,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        5e-10,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        5e-08,
+        5e-08
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "FS36999",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "id": "triangle_72_1",
+      "name": "Triangle 72#1",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        22000,
+        12000,
+        22000,
+        12000
+      ],
+      "rf": [
+        390000,
+        390000,
+        390000,
+        390000
+      ],
+      "rb": [
+        82000,
+        82000,
+        82000,
+        100000
+      ],
+      "re": [
+        82,
+        150,
+        82,
+        2700
+      ],
+      "sustainFoot": 820,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        5.6e-10,
+        5.6e-10,
+        5.6e-10
+      ],
+      "cClip": [
+        5e-08,
+        5e-08
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        39000,
+        39000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": true,
+      "logPots": false,
+      "transistor": "FS37000 PNP",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "Negative 9V supply. Caption uses FS3700; symbol labels FS37000. Unknown original transistor characteristics.",
+      "id": "triangle_72_2",
+      "name": "Triangle 72#2 PNP",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        18000,
+        12000,
+        18000,
+        12000
+      ],
+      "rf": [
+        390000,
+        390000,
+        390000,
+        390000
+      ],
+      "rb": [
+        82000,
+        82000,
+        82000,
+        100000
+      ],
+      "re": [
+        100,
+        150,
+        100,
+        2700
+      ],
+      "sustainFoot": 1000,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        5.6e-10,
+        5.6e-10,
+        5.6e-10
+      ],
+      "cClip": [
+        1e-07,
+        5e-08
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        39000,
+        39000
+      ],
+      "toneC": [
+        3.3e-10,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": true,
+      "logPots": true,
+      "transistor": "NEC A733 / 2SA733",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "Original diode unknown; drawn 1N914 substitute used. 330pF tone capacitor retained intentionally.",
+      "id": "elk_sustainar",
+      "name": "Elk / Electro Sound Sustainar",
+      "sustainLog": true,
+      "toneLog": true,
+      "volumeLog": true,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        10000,
+        10000,
+        12000,
+        12000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        470000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        150,
+        150,
+        150,
+        2700
+      ],
+      "sustainFoot": 1000,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        5e-10,
+        5e-10,
+        5e-10
+      ],
+      "cClip": [
+        4.7e-08,
+        4.7e-08
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "2SC1335 (caption)",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "Caption says 2SC1335, symbols say FS36999. 0.047 interpreted as uF. Original diode identity unknown; nominal silicon model used.",
+      "id": "sekova_2015",
+      "name": "Sekova Model 2015",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        12000,
+        12000,
+        12000,
+        12000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        100,
+        100,
+        100,
+        3300
+      ],
+      "sustainFoot": 820,
+      "rclip": [
+        7500,
+        7500
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1.5e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        4.7e-10,
+        4.7e-10,
+        4.7e-10
+      ],
+      "cClip": [
+        1e-07,
+        1e-07
+      ],
+      "clip": [
+        true,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4e-09,
+        1e-08
+      ],
+      "toneInputCap": 0,
+      "toneReversed": false,
+      "pnp": false,
+      "logPots": false,
+      "transistor": "FS36999",
+      "diode": "1N914",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "id": "rams_head_73_18",
+      "name": "Ram's Head 73#18",
+      "sustainLog": false,
+      "toneLog": false,
+      "volumeLog": false,
+      "cToneOutput": 1e-07
+    },
+    {
+      "rin": 33000,
+      "rc": [
+        15000,
+        10000,
+        15000,
+        10000
+      ],
+      "rf": [
+        470000,
+        470000,
+        470000,
+        390000
+      ],
+      "rb": [
+        100000,
+        100000,
+        100000,
+        100000
+      ],
+      "re": [
+        100,
+        100,
+        100,
+        2700
+      ],
+      "sustainFoot": 820,
+      "rclip": [
+        8200,
+        8200
+      ],
+      "cIn": 1e-07,
+      "cCouple1": 1e-07,
+      "cCouple2": 1e-07,
+      "cCouple3": 1e-07,
+      "cOutput": 1e-07,
+      "cFeedback": [
+        4.7e-10,
+        4.7e-10,
+        4.7e-10
+      ],
+      "cClip": [
+        1e-07,
+        1e-07
+      ],
+      "clip": [
+        false,
+        true
+      ],
+      "toneR": [
+        33000,
+        33000
+      ],
+      "toneC": [
+        4.7e-09,
+        1e-08
+      ],
+      "toneInputCap": 1e-07,
+      "toneReversed": true,
+      "pnp": false,
+      "logPots": true,
+      "transistor": "BC184",
+      "diode": "1N4148",
+      "inputBypassCap": 0,
+      "postInputLoad": 0,
+      "volumeBeforeOutput": false,
+      "outputShunt": 0,
+      "boost": false,
+      "beta": [
+        350,
+        350,
+        350,
+        350
+      ],
+      "notes": "First clipping branch omitted entirely; its 470pF feedback remains. Tone branches reversed as drawn. Baseline R13/R11=15k, R23=820ohm; ambiguous 560k annotation not applied.",
+      "id": "colorsound_supa",
+      "name": "Colorsound Supa ToneBender",
+      "sustainLog": true,
+      "toneLog": true,
+      "volumeLog": true,
+      "cToneOutput": 1e-07
+    }
+  ]
+}

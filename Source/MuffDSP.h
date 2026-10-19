@@ -17,6 +17,7 @@ class Engine {
 public:
  void prepare(double sampleRate) { rate=sampleRate; inputDC=coeff(25);outputDC=coeff(12);for(size_t i=0;i<6;++i){bassCoefficients[i]=coeff(voices[i].bass);trebleCoefficients[i]=coeff(voices[i].treble);}reset(); }
  void reset() { states={}; }
+ void mirrorChannel() { states[1]=states[0]; }
  float process(float input,int channel,int model,float sustain,float tone) {
   model=std::clamp(model,0,5);
   auto& s=states.at(static_cast<size_t>(channel)); auto v=voices.at(static_cast<size_t>(std::clamp(model,0,5)));
