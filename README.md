@@ -10,6 +10,10 @@ VST3 fuzz collection with **13 schematic-based circuit revisions, 14 circuit mod
 
 The ZIP contains the entire `.vst3` bundle, complete project/JUCE sources, build metadata and licence notices. Close the DAW, extract `Jerzy Muff Collection.vst3` into `C:\Program Files\Common Files\VST3`, then rescan effects. Native FL Studio compatibility remains unconfirmed. Full Windows pluginval GUI validation times out under Wine; Windows audio validation and CTest are reported separately in [VALIDATION.md](docs/VALIDATION.md).
 
+## Guitar audio demos
+
+[Listen to dry/wet guitar, all 14 circuits and six additional settings](audio-demos/0.2.0/README.md). Includes RMS-matched previews, a dry/Supa/Ram’s Head comparison and a downloadable WAV pack with original-gain float renders. [Audio test report](docs/AUDIO_TESTS.md).
+
 ## Models and controls
 
 V1 66#5; Triangle 66#8, 66#6, 66#11; Jordan Creator 6000; V1 67#1; Ace Tone FM-3 Distortion/Boost; Triangle 72#1 and 72#2 PNP; Elk/Electro Sound Sustainar; Sekova Model 2015; Ram's Head 73#18; Colorsound Supa ToneBender. The six 0.1.0 approximations remain explicitly labelled Legacy. Existing states without a circuit parameter select the legacy engine, and the original six-choice automation parameter is retained. Oversampling behavior at high host rates has changed, so bit-identical old renders are not promised.

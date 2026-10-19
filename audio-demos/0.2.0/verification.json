@@ -1,0 +1,177 @@
+{
+  "result": "PASS",
+  "finite": true,
+  "clip_free_listening": true,
+  "unique_files": 21,
+  "regression_tests": "3/3 passed",
+  "records": [
+    {
+      "file": "00_dry",
+      "frames": 573300,
+      "rms_dbfs": -23.999999993190258,
+      "peak_dbfs": -6.4661865234375,
+      "spectral_energy_centroid_hz": 362.5770850181987,
+      "sha256": "7c33c3ea1a42e6cb7afb42b9a463e5a292cf962aede78fee32c2b471a3df0a3b"
+    },
+    {
+      "file": "01_v1_66_5",
+      "frames": 573300,
+      "rms_dbfs": -23.999999821323428,
+      "peak_dbfs": -18.068147659301758,
+      "spectral_energy_centroid_hz": 410.2612639306557,
+      "sha256": "ed6b72762cf43b5a814689224492320577314a92fd8ab2493cdddc79a988362f"
+    },
+    {
+      "file": "02_triangle_66_8",
+      "frames": 573300,
+      "rms_dbfs": -23.999999915517407,
+      "peak_dbfs": -17.78985595703125,
+      "spectral_energy_centroid_hz": 413.8808919061697,
+      "sha256": "cf1ffc8342467c6c15f4d897285c1ceb8e7a60942993dece1f837dc5716fbad9"
+    },
+    {
+      "file": "03_triangle_66_6",
+      "frames": 573300,
+      "rms_dbfs": -24.000000151283697,
+      "peak_dbfs": -17.694007873535156,
+      "spectral_energy_centroid_hz": 414.2340459725215,
+      "sha256": "3700c1131ce0bd2504996cd8241c5f4f7baeaa0490850f5b9fe464efbcdb37df"
+    },
+    {
+      "file": "04_triangle_66_11",
+      "frames": 573300,
+      "rms_dbfs": -23.999999676924936,
+      "peak_dbfs": -18.70899772644043,
+      "spectral_energy_centroid_hz": 376.14943351691426,
+      "sha256": "e5ee9b2891f1d4f3e083d6794c7a00b8e37e1e7b373a96acb20a524b9fb51fb6"
+    },
+    {
+      "file": "05_jordan_6000",
+      "frames": 573300,
+      "rms_dbfs": -24.00000016811724,
+      "peak_dbfs": -15.978289604187012,
+      "spectral_energy_centroid_hz": 358.01624679067953,
+      "sha256": "5dc243bc2e0e0f562aab232ff593bacc038c5babbf23bf6defbdb74d3a1dbd49"
+    },
+    {
+      "file": "06_v1_67_1",
+      "frames": 573300,
+      "rms_dbfs": -23.99999976996,
+      "peak_dbfs": -15.32003402709961,
+      "spectral_energy_centroid_hz": 412.39525418595366,
+      "sha256": "9d3c6e44a5cb0b28b71c2d81ec6184343839141d6c29b13690ccb0f3aa5e92b0"
+    },
+    {
+      "file": "07_ace_fm3_dist",
+      "frames": 573300,
+      "rms_dbfs": -24.00000021482732,
+      "peak_dbfs": -15.461456298828125,
+      "spectral_energy_centroid_hz": 329.9162889891502,
+      "sha256": "0ca2e576697a4938725947c072fea6ec1c3c293c68c1330517e37fec12f2f7a8"
+    },
+    {
+      "file": "08_ace_fm3_boost",
+      "frames": 573300,
+      "rms_dbfs": -23.999999795634412,
+      "peak_dbfs": -8.682880401611328,
+      "spectral_energy_centroid_hz": 291.6275682265149,
+      "sha256": "11a94c65d1567118020c9d2c8b8ee0531bbf2f924049f8b86fa9439a16b48dae"
+    },
+    {
+      "file": "09_triangle_72_1",
+      "frames": 573300,
+      "rms_dbfs": -23.999999767595746,
+      "peak_dbfs": -14.594352722167969,
+      "spectral_energy_centroid_hz": 340.7895278695088,
+      "sha256": "d43364b89d5e9097d0030346cc1b83cba631641eae32d04eb56cdc14f5dde91c"
+    },
+    {
+      "file": "10_triangle_72_2",
+      "frames": 573300,
+      "rms_dbfs": -24.000000102025894,
+      "peak_dbfs": -14.581241607666016,
+      "spectral_energy_centroid_hz": 351.90476716611397,
+      "sha256": "d8cc4d96ecf4537bd1aaae864a2b659704c5134e0efeaa195dda07128ca37df7"
+    },
+    {
+      "file": "11_elk_sustainar",
+      "frames": 573300,
+      "rms_dbfs": -24.00000002253811,
+      "peak_dbfs": -15.145291328430176,
+      "spectral_energy_centroid_hz": 292.34586098315793,
+      "sha256": "498c811460a8dccbfa03eb2e8b5747a8853a13dbd4df80394ccb2d4f1a0949f6"
+    },
+    {
+      "file": "12_sekova_2015",
+      "frames": 573300,
+      "rms_dbfs": -24.000000058049444,
+      "peak_dbfs": -14.51296329498291,
+      "spectral_energy_centroid_hz": 338.21402580497085,
+      "sha256": "1d6e65c2682c04b2185e3254ddf263bbed15b8317fbc2ab2a07371f6b298ec84"
+    },
+    {
+      "file": "13_rams_head_73_18",
+      "frames": 573300,
+      "rms_dbfs": -24.000000002080746,
+      "peak_dbfs": -14.841767311096191,
+      "spectral_energy_centroid_hz": 414.5152324381013,
+      "sha256": "4d53fd5537a488517324bc13b3a4490abbc3345f43bb0e13137ccb588a02e39c"
+    },
+    {
+      "file": "14_colorsound_supa",
+      "frames": 573300,
+      "rms_dbfs": -23.999999671314995,
+      "peak_dbfs": -8.413947105407715,
+      "spectral_energy_centroid_hz": 1156.1937197592208,
+      "sha256": "538229ea8b92932765c5a748b9c61b53a745f23a524284f237df4acb22423f9e"
+    },
+    {
+      "file": "15_supa_low_sustain",
+      "frames": 573300,
+      "rms_dbfs": -24.000000136485635,
+      "peak_dbfs": -7.625957489013672,
+      "spectral_energy_centroid_hz": 753.4269019552446,
+      "sha256": "1530763e085119ac58fb695d8abd6026e963dcea117e35a2daff93834cce4ef3"
+    },
+    {
+      "file": "16_supa_high_sustain",
+      "frames": 573300,
+      "rms_dbfs": -23.99999986010139,
+      "peak_dbfs": -10.133121490478516,
+      "spectral_energy_centroid_hz": 954.7716744052469,
+      "sha256": "3650346008bcdb352d40926a2a144820522f2de5e5f0d5557cb3f30c23b8c24c"
+    },
+    {
+      "file": "17_supa_tone_10",
+      "frames": 573300,
+      "rms_dbfs": -23.999999698930505,
+      "peak_dbfs": -7.32997465133667,
+      "spectral_energy_centroid_hz": 1456.8396589782749,
+      "sha256": "0ff73001a169b56211abbdcba377a12e2994985c83a2e43cb682c6f2e7fb1ce9"
+    },
+    {
+      "file": "18_supa_tone_90",
+      "frames": 573300,
+      "rms_dbfs": -24.000000191121394,
+      "peak_dbfs": -11.843414306640625,
+      "spectral_energy_centroid_hz": 324.2778824335877,
+      "sha256": "8aeab754be406f9dcdb4f27e5ba801ea0d699475ad0b1f13b237083edcb514b5"
+    },
+    {
+      "file": "19_rams_low_sustain",
+      "frames": 573300,
+      "rms_dbfs": -23.999999482121034,
+      "peak_dbfs": -15.334762573242188,
+      "spectral_energy_centroid_hz": 396.24137453023,
+      "sha256": "e413124c3999da9aaeacf23bf6053f2cd483a1d1a2217f72e8fde012d1dac834"
+    },
+    {
+      "file": "20_rams_high_sustain",
+      "frames": 573300,
+      "rms_dbfs": -24.00000012400777,
+      "peak_dbfs": -15.678079605102539,
+      "spectral_energy_centroid_hz": 495.29332651018285,
+      "sha256": "9eb1026ebc9bb9b89aceace697ec5dccdc3f5b88d7e302f077d0ebc170be686f"
+    }
+  ]
+}

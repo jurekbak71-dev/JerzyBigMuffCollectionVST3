@@ -3,6 +3,7 @@
 #include <thread>
 #include <atomic>
 #include <chrono>
+#include "AudioRender.h"
 int benchmarkPlugin(){
  MuffProcessor p;juce::MidiBuffer midi;
  for(bool identical:{true,false}){
@@ -18,6 +19,7 @@ int benchmarkPlugin(){
 }
 int main(int argc,char** argv) {
  juce::ScopedJuceInitialiser_GUI initialiser;
+ if(argc>1&&std::string(argv[1])=="--render-audio")return renderAudio(argc,argv);
  if(argc>1&&std::string(argv[1])=="--benchmark")return benchmarkPlugin();
  MuffProcessor p;
  if(p.selectedModel()!=19)return 22;

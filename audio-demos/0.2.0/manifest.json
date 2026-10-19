@@ -1,0 +1,409 @@
+{
+  "source_url": "https://github.com/GuitarML/GuitarLSTM/blob/ee0983bb02af1e2db476466614d6421473beb01d/data/ts9_test1_in_FP32.wav",
+  "source_sha256": "91e1c953ed7a5522ef7efc2c166b63e93860d9bce0f6c73eec0dda5c585ebf4b",
+  "source_credit": "GuitarML / Keith Bloemer, Fender Telecaster bridge pickup, tone/volume max",
+  "source_license": "GPL-3.0 (upstream repository LICENSE.txt)",
+  "source_start_seconds": 0,
+  "source_excerpt_seconds": 12,
+  "rate": 44100,
+  "channels": 1,
+  "tail_seconds": 1,
+  "input_gain": 0.570950655143574,
+  "calibrated_input_peak_volts": 0.25,
+  "volts_per_full_scale": 1,
+  "block_size": 256,
+  "oversampling": 4,
+  "preroll_seconds": 0.1,
+  "alignment": "Reported plugin latency removed; oversampling IIR retains frequency-dependent phase",
+  "target_listening_rms_dbfs": -24.0,
+  "normalization_window_seconds": 12,
+  "audio_path": "Full MuffProcessor compiled from Source/Plugin.cpp; no amp/cab/EQ/limiter",
+  "vst3_host_test": false,
+  "records": [
+    {
+      "stem": "00_dry",
+      "name": "Dry guitar",
+      "circuit": null,
+      "sustain": null,
+      "tone": null,
+      "volume": null,
+      "raw": {
+        "peak": 0.2499999850988388,
+        "rms": 0.03190569314970584
+      },
+      "listening": {
+        "peak": 0.4749968647956848,
+        "rms": 0.06062042066962673
+      },
+      "listening_gain_db": 5.575015255639827
+    },
+    {
+      "stem": "01_v1_66_5",
+      "name": "V1 66#5",
+      "circuit": 1,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.3095304071903229,
+        "rms": 0.1502803847330663
+      },
+      "listening": {
+        "peak": 0.12490879744291306,
+        "rms": 0.06064458317471587
+      },
+      "listening_gain_db": -7.882205827756547
+    },
+    {
+      "stem": "02_triangle_66_8",
+      "name": "Triangle 66#8",
+      "circuit": 2,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.2729973793029785,
+        "rms": 0.1284503972153374
+      },
+      "listening": {
+        "peak": 0.128975510597229,
+        "rms": 0.06068540098368735
+      },
+      "listening_gain_db": -6.513024607344487
+    },
+    {
+      "stem": "03_triangle_66_6",
+      "name": "Triangle 66#6",
+      "circuit": 3,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.2907811999320984,
+        "rms": 0.1351993875769673
+      },
+      "listening": {
+        "peak": 0.13040661811828613,
+        "rms": 0.06063285677937355
+      },
+      "listening_gain_db": -6.965333699606325
+    },
+    {
+      "stem": "04_triangle_66_11",
+      "name": "Triangle 66#11",
+      "circuit": 4,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.08415484428405762,
+        "rms": 0.0439778747362392
+      },
+      "listening": {
+        "peak": 0.11602465808391571,
+        "rms": 0.060632490667650335
+      },
+      "listening_gain_db": 2.78942312594599
+    },
+    {
+      "stem": "05_jordan_6000",
+      "name": "Jordan Creator 6000",
+      "circuit": 5,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.010987993329763412,
+        "rms": 0.004192598411200547
+      },
+      "listening": {
+        "peak": 0.15888600051403046,
+        "rms": 0.06062482924813164
+      },
+      "listening_gain_db": 23.203345459396093
+    },
+    {
+      "stem": "06_v1_67_1",
+      "name": "V1 67#1",
+      "circuit": 6,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.41273072361946106,
+        "rms": 0.1460061991713876
+      },
+      "listening": {
+        "peak": 0.17139506340026855,
+        "rms": 0.060632124974750165
+      },
+      "listening_gain_db": -7.633370330752762
+    },
+    {
+      "stem": "07_ace_fm3_dist",
+      "name": "Ace Tone FM-3 Distortion",
+      "circuit": 7,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.4923568069934845,
+        "rms": 0.17704723484394674
+      },
+      "listening": {
+        "peak": 0.1686270534992218,
+        "rms": 0.060636826123616365
+      },
+      "listening_gain_db": -9.307053481196565
+    },
+    {
+      "stem": "08_ace_fm3_boost",
+      "name": "Ace Tone FM-3 Boost",
+      "circuit": 8,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 1.476414442062378,
+        "rms": 0.24320495295229086
+      },
+      "listening": {
+        "peak": 0.36800697445869446,
+        "rms": 0.06062059453349683
+      },
+      "listening_gain_db": -12.067044528293831
+    },
+    {
+      "stem": "09_triangle_72_1",
+      "name": "Triangle 72#1",
+      "circuit": 9,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.5546079277992249,
+        "rms": 0.18045783414098454
+      },
+      "listening": {
+        "peak": 0.18632987141609192,
+        "rms": 0.06062784566932319
+      },
+      "listening_gain_db": -9.474072265235016
+    },
+    {
+      "stem": "10_triangle_72_2",
+      "name": "Triangle 72#2 PNP",
+      "circuit": 10,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.5069435834884644,
+        "rms": 0.1646987570327328
+      },
+      "listening": {
+        "peak": 0.1866113543510437,
+        "rms": 0.060627372524053244
+      },
+      "listening_gain_db": -8.680431336156113
+    },
+    {
+      "stem": "11_elk_sustainar",
+      "name": "Elk / Electro Sound Sustainar",
+      "circuit": 11,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.12810112535953522,
+        "rms": 0.04440972185319434
+      },
+      "listening": {
+        "peak": 0.17487822473049164,
+        "rms": 0.06062626949657732
+      },
+      "listening_gain_db": 2.70365592411229
+    },
+    {
+      "stem": "12_sekova_2015",
+      "name": "Sekova Model 2015",
+      "circuit": 12,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.5621678829193115,
+        "rms": 0.1812098546946083
+      },
+      "listening": {
+        "peak": 0.18808402121067047,
+        "rms": 0.06062722278024764
+      },
+      "listening_gain_db": -9.510282643881789
+    },
+    {
+      "stem": "13_rams_head_73_18",
+      "name": "Ram's Head 73#18",
+      "circuit": 13,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.3766995370388031,
+        "rms": 0.1261194622791329
+      },
+      "listening": {
+        "peak": 0.18109719455242157,
+        "rms": 0.06063155869153009
+      },
+      "listening_gain_db": -6.361667515436298
+    },
+    {
+      "stem": "14_colorsound_supa",
+      "name": "Colorsound Supa ToneBender",
+      "circuit": 14,
+      "sustain": 0.5,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.1317892223596573,
+        "rms": 0.021048303787593727
+      },
+      "listening": {
+        "peak": 0.37957948446273804,
+        "rms": 0.06062335276951848
+      },
+      "listening_gain_db": 9.188456667421894
+    },
+    {
+      "stem": "15_supa_low_sustain",
+      "name": "Supa: Sustain 15%",
+      "circuit": 14,
+      "sustain": 0.15,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.08062852174043655,
+        "rms": 0.01176035346751554
+      },
+      "listening": {
+        "peak": 0.4156253933906555,
+        "rms": 0.06062248802280293
+      },
+      "listening_gain_db": 14.244267791985425
+    },
+    {
+      "stem": "16_supa_high_sustain",
+      "name": "Supa: Sustain 90%",
+      "circuit": 14,
+      "sustain": 0.9,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.1917421668767929,
+        "rms": 0.037325556642713933
+      },
+      "listening": {
+        "peak": 0.3114181160926819,
+        "rms": 0.060622317576160066
+      },
+      "listening_gain_db": 4.212524714994396
+    },
+    {
+      "stem": "17_supa_tone_10",
+      "name": "Supa: Tone 10%",
+      "circuit": 14,
+      "sustain": 0.5,
+      "tone": 0.1,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.16379769146442413,
+        "rms": 0.023090692117003868
+      },
+      "listening": {
+        "peak": 0.43003252148628235,
+        "rms": 0.06062202935027596
+      },
+      "listening_gain_db": 8.383870109249983
+    },
+    {
+      "stem": "18_supa_tone_90",
+      "name": "Supa: Tone 90%",
+      "circuit": 14,
+      "sustain": 0.5,
+      "tone": 0.9,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.13708610832691193,
+        "rms": 0.032496107478429764
+      },
+      "listening": {
+        "peak": 0.255758136510849,
+        "rms": 0.060627178300150866
+      },
+      "listening_gain_db": 5.4167205172620125
+    },
+    {
+      "stem": "19_rams_low_sustain",
+      "name": "Ram's Head: Sustain 15%",
+      "circuit": 13,
+      "sustain": 0.15,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.3233436644077301,
+        "rms": 0.11457517519700787
+      },
+      "listening": {
+        "peak": 0.17110472917556763,
+        "rms": 0.06063008425330743
+      },
+      "listening_gain_db": -5.528047649346453
+    },
+    {
+      "stem": "20_rams_high_sustain",
+      "name": "Ram's Head: Sustain 90%",
+      "circuit": 13,
+      "sustain": 0.9,
+      "tone": 0.5,
+      "volume": 0.5,
+      "processor_result": "latency_samples=6 solver_failures=0 samples=573300",
+      "raw": {
+        "peak": 0.37272539734840393,
+        "rms": 0.13740619379940647
+      },
+      "listening": {
+        "peak": 0.16447356343269348,
+        "rms": 0.06063361112233285
+      },
+      "listening_gain_db": -7.105857366303683
+    }
+  ],
+  "dsp_source_commit": "455dd0545eda836de7316fe94a8eff1fa38ba3e0",
+  "processor_source_sha256": {
+    "Source/Circuit/AnalogCircuit.h": "1f82d9d49b5b30c352c51a6c1624eff5a3cfbc7edb64cd50ba1b9e8d2b4d4d2c",
+    "Source/Circuit/Catalog.h": "7dc1cd8cd5563989d1c5cf90564f9d5be20eb541fca2e9a2480c1c33b6020bd3",
+    "Source/MuffDSP.h": "4e7aa2f421927ecc176a70973b53f2aa667fdd707f6565602153f1b6a13586e2",
+    "Source/MuffProcessor.h": "de58c727228cd1bbe96e710dd9249beb0e36d5124c959f794da9f0a8b3e80001",
+    "Source/Plugin.cpp": "d4393d7ba03c6ee50b526e41acfd3b5305e9905b923cfe41a238d7c83a828fd4"
+  }
+}
